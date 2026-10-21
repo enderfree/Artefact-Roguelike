@@ -10,7 +10,7 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
     public InputActionReference MoveAction;
     public InputActionReference JumpAction;
     public InputActionReference SprintAction;
-    // public CinemachineCamera PlayerCamera;
+    public CinemachineCamera PlayerCamera;
 
     public float MaxGroundSpeed = 10f;
     public float MaxAirSpeed = 5f;
@@ -117,7 +117,7 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
         _moveInput = new Vector3(moveActionInput.x, 0, moveActionInput.y);
         _moveInput = Vector3.ClampMagnitude(_moveInput, 1);
 
-        // _moveInput = GetCameraPlanarRotation(PlayerCamera.State.GetFinalOrientation()) * _moveInput;
+        _moveInput = GetCameraPlanarRotation(PlayerCamera.State.GetFinalOrientation()) * _moveInput;
 
         _lookInput = _moveInput;
 
