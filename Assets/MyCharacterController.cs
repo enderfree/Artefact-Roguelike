@@ -213,4 +213,15 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
             _timeSinceGrounded += deltaTime;
         }
     }
+
+    // My Functions!
+    /// <summary>
+    /// This function should be called after inputs have been assigned to variables and 
+    /// if an attack button was pressed. It the looks for comboes and calles the proper 
+    /// action from the weapon's moveset. 
+    /// </summary>
+    private void CombatListener()
+    {
+
+    }
 }
