@@ -29,14 +29,14 @@ public abstract class Moveset
     }
 
     // Functions
-    public virtual void HandleComboes(char actionUnicode)
+    public virtual void HandleComboes(char actionUTFcode)
     {
         if (_pendingCombo == "")
         {
             _potentiallyMatchingCombos = new List<string>(_combos.Keys);
         }
 
-        _pendingCombo += actionUnicode;
+        _pendingCombo += actionUTFcode;
 
         List<string> potentiallyMatchingComboes = _potentiallyMatchingCombos;
         int i = _pendingCombo.Length - 1;
