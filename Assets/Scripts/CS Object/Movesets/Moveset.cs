@@ -14,8 +14,8 @@ public abstract class Moveset
     [SerializeField] private Animator _animator;
     [SerializeField] private Type _type;
 
-    public Dictionary<string, Action> _combos = new Dictionary<string, Action>();
-    public List<string> _potentiallyMatchingCombos;
+    public Dictionary<string, Action> Combos = new Dictionary<string, Action>();
+    public List<string> PotentiallyMatchingCombos;
     protected string _pendingCombo = "";
 
     // Constructors
@@ -29,16 +29,16 @@ public abstract class Moveset
     }
 
     // Functions
-    public virtual void HandleComboes(char actionUTFcode)
+    public virtual void HandleComboes(char actionUnicode)
     {
         if (_pendingCombo == "")
         {
-            _potentiallyMatchingCombos = new List<string>(_combos.Keys);
+            PotentiallyMatchingCombos = new List<string>(Combos.Keys);
         }
 
-        _pendingCombo += actionUTFcode;
+        _pendingCombo += actionUnicode;
 
-        List<string> potentiallyMatchingComboes = _potentiallyMatchingCombos;
+        List<string> potentiallyMatchingComboes = PotentiallyMatchingCombos;
         int i = _pendingCombo.Length - 1;
 
         foreach (string combo in potentiallyMatchingComboes)
@@ -48,13 +48,13 @@ public abstract class Moveset
             {
                 if (combo.Length == _pendingCombo.Length)
                 {
-                    _combos[_pendingCombo]();
+                    Combos[_pendingCombo]();
                     _pendingCombo = "";
                 }
             } 
             else 
             {
-                _potentiallyMatchingCombos.Remove(combo);
+                PotentiallyMatchingCombos.Remove(combo);
             }
         }
     }
