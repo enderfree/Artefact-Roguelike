@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /// <summary>
 /// A Moveset is mostly a mapping between an input and an animation
 /// </summary>
-public abstract class Moveset
+public class Moveset
 {
     // Fields
     public static Dictionary<MovesetNames, Moveset> Movesets = new Dictionary<MovesetNames, Moveset>();
