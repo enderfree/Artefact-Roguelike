@@ -15,6 +15,8 @@ public class Weapon
     // add a field for bows, I'm just not sure if range, velocity or path will be needed yet
     [SerializeField] private Type _type;
 
+    public Dictionary<string, Action> Combos = new Dictionary<string, Action>();
+
     // Constructors
     public Weapon(string name, Moveset moveset, GameObject prefab, float damage, Type type)
     {
@@ -24,7 +26,17 @@ public class Weapon
         _damage = damage;
         _type = type;
 
+        FillCombos();
         Weapons.Add(this);
+    }
+
+    // Functions
+    /// <summary>
+    /// if you want to add weapon-specific combo, override this, call base and then add them in Combos
+    /// </summary>
+    protected virtual void FillCombos()
+    {
+        Combos = Moveset.Combos;
     }
 
     // Getters and Setters
