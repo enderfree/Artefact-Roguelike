@@ -1,26 +1,28 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class Weapon
 {
     // Fields
     public static List<Weapon> Weapons = new List<Weapon>();
 
-    // the weapon name will likely be used raw and never references in the code for anything 
-    // so an enum should not be needed for those. 
+    // I want to be able to add things to the name of the weapon mid game 
     [SerializeField] private string _name;
     [SerializeField] private Moveset _moveset;
     [SerializeField] private GameObject _prefab;
     [SerializeField] private float _damage;
     // add a field for bows, I'm just not sure if range, velocity or path will be needed yet
+    [SerializeField] private Type _type;
 
     // Constructors
-    public Weapon(string name, Moveset moveset, GameObject prefab, float damage)
+    public Weapon(string name, Moveset moveset, GameObject prefab, float damage, Type type)
     {
         _name = name;
         _moveset = moveset;
         _prefab = prefab;
         _damage = damage;
+        _type = type;
 
         Weapons.Add(this);
     }
@@ -68,6 +70,18 @@ public class Weapon
         set
         {
             _damage = value;
+        }
+    }
+
+    public virtual Type WeaponType
+    { 
+        get
+        {
+            return _type;
+        }
+        set
+        {
+            _type = value;
         }
     }
 }
