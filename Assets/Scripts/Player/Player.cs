@@ -9,6 +9,9 @@ public class Player: MonoBehaviour
 
     private Weapon _weapon;
 
+    public delegate void HPChanged(float newHP);
+    public static event HPChanged OnHPChanged;
+
     // Functions
     private void Die()
     {
@@ -46,7 +49,7 @@ public class Player: MonoBehaviour
         {
             if (value <= 0f)
             {
-                //_hp = 0f;
+                _hp = 0f;
                 Die();
             }
             else if (value > MaxHP)
@@ -57,6 +60,8 @@ public class Player: MonoBehaviour
             {
                 _hp = value;
             }
+
+            OnHPChanged(_hp);
         }
     }
 
