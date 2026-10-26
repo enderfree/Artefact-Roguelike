@@ -7,6 +7,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _maxHP;
     [SerializeField] private float _hp;
 
+    // Functions
+    private void Die()
+    {
+        Destroy(gameObject);
+    }
+
     // Getters and Setters
     public virtual EnemyNames Name
     {
@@ -40,7 +46,19 @@ public class Enemy : MonoBehaviour
         }
         set
         {
-            _hp = value;
+            if (value <= 0f)
+            {
+                //_hp = 0f;
+                Die();
+            }
+            else if (value > MaxHP)
+            {
+                _hp = MaxHP;
+            }
+            else
+            {
+                _hp = value;
+            }
         }
     }
 }
