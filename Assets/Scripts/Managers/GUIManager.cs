@@ -8,11 +8,6 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private Slider _hpBar;
 
     // MonoBehavior
-    private void Start()
-    {
-        Init();
-    }
-
     private void OnEnable()
     {
         Player.OnHPChanged += OnHPChanged;
@@ -24,7 +19,7 @@ public class GUIManager : MonoBehaviour
     }
 
     // My Functions
-    private void Init()
+    public void Init()
     {
         _hpBar.maxValue = _playerStats.MaxHP;
         _hpBar.value = _playerStats.HP;

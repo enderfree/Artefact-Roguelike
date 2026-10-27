@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Player: MonoBehaviour
 {
@@ -9,10 +10,17 @@ public class Player: MonoBehaviour
 
     private Weapon _weapon;
 
+    public Dictionary<int, Weapon> Loadout = new Dictionary<int, Weapon>();
+
     public delegate void HPChanged(float newHP);
     public static event HPChanged OnHPChanged;
 
     // Functions
+    public void Init()
+    {
+        // assign initial loadout
+    }
+
     private void Die()
     {
         // todo
