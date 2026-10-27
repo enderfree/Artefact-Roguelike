@@ -22,15 +22,32 @@ public class GameManager : MonoBehaviour
         _guiManager.Init();
     }
 
+    /// <summary>
+    /// this returns 6 numbers and can be used raw as indexes
+    /// </summary>
+    /// <returns>0, 1, 2, 3, 4 or 5</returns>
+    public int Roll1d6()
+    {
+        return Random.Range(0, 5); 
+    }
+
+    /// <summary>
+    /// Handles rolling the white dice
+    /// </summary>
+    /// <returns>0, 1, 2, 3, 4 or 5</returns>
     public int RollWhiteDice()
     {
         // animation
-        return Random.Range(1, 6);
+        return Roll1d6();
     }
 
+    /// <summary>
+    /// Handles rolling the black dice
+    /// </summary>
+    /// <returns>0, 1, 2, 3, 4 or 5</returns>
     public int RollBlackDice()
     {
         // animation
-        return Random.Range(1, 6);
+        return Roll1d6();
     }
 }

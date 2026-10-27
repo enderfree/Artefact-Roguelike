@@ -9,14 +9,20 @@ public abstract class BlessingEffect
     private string _description;
     private BlessingRarities _rarity;
     private List<int> _validFaces = new List<int>();
+    // minimum number of faces
+    private int _mustBeOn;
+    // maximum number of faces
+    private int _canBeOn;
 
     // Constructors
-    public BlessingEffect(BlessingEffectNames name, string description, BlessingRarities rarity, List<int> validFaces)
+    public BlessingEffect(BlessingEffectNames name, string description, BlessingRarities rarity, List<int> validFaces, int mustBeOn, int canBeOn)
     {
         _name = name;
         _description = description;
         _rarity = rarity;
         _validFaces = validFaces;
+        _mustBeOn = mustBeOn;
+        _canBeOn = canBeOn;
 
         BlessingEffects.Add(this);
     }
@@ -68,6 +74,36 @@ public abstract class BlessingEffect
         get
         {
             return _validFaces;
+        }
+    }
+
+    /// <summary>
+    /// minimum number of faces
+    /// </summary>
+    public virtual int MustBeOn
+    {
+        get
+        {
+            return _mustBeOn;
+        }
+        set
+        {
+            _mustBeOn = value;
+        }
+    }
+
+    /// <summary>
+    /// maximum number of faces
+    /// </summary>
+    public virtual int CanBeOn
+    {
+        get
+        {
+            return _canBeOn;
+        }
+        set
+        {
+            _canBeOn = value;
         }
     }
 }

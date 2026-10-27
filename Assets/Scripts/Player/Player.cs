@@ -10,7 +10,11 @@ public class Player: MonoBehaviour
 
     private Weapon _weapon;
 
-    public Dictionary<int, Weapon> Loadout = new Dictionary<int, Weapon>();
+    // Face is implied by order in List
+    private List<List<BlessingEffect>> _blessingPerFace = new List<List<BlessingEffect>>();
+
+    // Face is implied by order in List
+    public List<Weapon> Loadout = new List<Weapon>();
 
     public delegate void HPChanged(float newHP);
     public static event HPChanged OnHPChanged;
@@ -19,6 +23,7 @@ public class Player: MonoBehaviour
     public void Init()
     {
         // assign initial loadout
+        // assing initial weapon based on WhiteDice
     }
 
     private void Die()
@@ -82,6 +87,18 @@ public class Player: MonoBehaviour
         set
         {
             _weapon = value;
+        }
+    }
+
+    /// <summary>
+    /// First list represents a dice face
+    /// Inner list contains all BlessingEffects that trigger on this face
+    /// </summary>
+    public List<List<BlessingEffect>> BlessingEffects
+    {
+        get
+        {
+            return _blessingPerFace;
         }
     }
 }
