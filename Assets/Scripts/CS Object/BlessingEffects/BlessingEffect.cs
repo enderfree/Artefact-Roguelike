@@ -7,20 +7,24 @@ public abstract class BlessingEffect
 
     private BlessingEffectNames _name;
     private string _description;
+    private BlessingRarities _rarity;
+    private List<int> _validFaces = new List<int>();
 
     // Constructors
-    public BlessingEffect(BlessingEffectNames name, string description)
+    public BlessingEffect(BlessingEffectNames name, string description, BlessingRarities rarity, List<int> validFaces)
     {
         _name = name;
         _description = description;
+        _rarity = rarity;
+        _validFaces = validFaces;
 
         BlessingEffects.Add(this);
     }
 
     // Functions
-    public abstract void OnPickUp();
+    public abstract void ApplyEffect();
 
-    public abstract void EffectOnEnemy();
+    public abstract void RemoveEffect();
 
     // getters and Setters
     public virtual BlessingEffectNames Name
@@ -44,6 +48,26 @@ public abstract class BlessingEffect
         set
         {
             _description = value;
+        }
+    }
+
+    public virtual BlessingRarities Rarity
+    {
+        get
+        {
+            return _rarity;
+        }
+        set
+        {
+            _rarity = value;
+        }
+    }
+
+    public virtual List<int> ValidFaces
+    {
+        get
+        {
+            return _validFaces;
         }
     }
 }

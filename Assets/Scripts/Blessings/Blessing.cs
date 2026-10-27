@@ -8,15 +8,15 @@ public class Blessing: MonoBehaviour
 
     // Maybe replace that by a name generator?
     private BlessingNames _name;
-    private BlessingEffect _p1Effect;
-    private BlessingEffect _p2Effect;
+    private BlessingEffect _effect;
+    private BlessingEffect _curse;
 
     // Constructor
-    public Blessing(BlessingNames name, BlessingEffect p1Effect, BlessingEffect p2Effect)
+    public Blessing(BlessingNames name, BlessingEffect effect, BlessingEffect curse)
     {
         _name = name;
-        _p1Effect = p1Effect;
-        _p2Effect = p2Effect;
+        _effect = effect;
+        _curse = curse;
 
         Blessings.Add(this);
     }
@@ -34,27 +34,27 @@ public class Blessing: MonoBehaviour
         }
     }
 
-    public virtual BlessingEffect P1Effect
+    public virtual BlessingEffect Effect
     {
         get
         {
-            return _p1Effect;
+            return _effect;
         }
         set
         {
-            _p1Effect = value;
+            _effect = value;
         }
     }
 
-    public virtual BlessingEffect P2Effect
+    public virtual BlessingEffect Curse
     {
         get
         {
-            return _p1Effect;
+            return _curse;
         }
         set
         {
-            _p1Effect = value;
+            _curse = value;
         }
     }
 }
