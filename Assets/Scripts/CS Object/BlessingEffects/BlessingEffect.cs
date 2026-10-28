@@ -8,7 +8,8 @@ public abstract class BlessingEffect
     private BlessingEffectNames _name;
     private string _description;
     private BlessingRarities _rarity;
-    private List<int> _validFaces = new List<int>();
+    // 0-5, not 1-6 for list utilities
+    private List<int> _validFaces = new List<int>(); 
     // minimum number of faces
     private int _mustBeOn;
     // maximum number of faces
