@@ -3,11 +3,18 @@ using UnityEngine.UI;
 
 public class GUIManager : MonoBehaviour
 {
-    // Fields
+    //// Fields
+    // Outside Scripts
     [SerializeField] private Player _playerStats;
+
+    // Hud Sections
+    [SerializeField] private GameObject _menuPanel;
+    [SerializeField] private GameObject _faceSelectionMenu;
+
+    // Hud Ojects
     [SerializeField] private Slider _hpBar;
 
-    // MonoBehavior
+    //// MonoBehavior
     private void OnEnable()
     {
         Player.OnHPChanged += OnHPChanged;
@@ -18,14 +25,17 @@ public class GUIManager : MonoBehaviour
         Player.OnHPChanged -= OnHPChanged;
     }
 
-    // My Functions
+    //// My Functions
     public void Init()
     {
+        _faceSelectionMenu.SetActive(false);
+        _menuPanel.SetActive(false);
+
         _hpBar.maxValue = _playerStats.MaxHP;
         _hpBar.value = _playerStats.HP;
     }
 
-    // Events
+    //// Events
     private void OnHPChanged(float newHP)
     {
         _hpBar.value = newHP;
