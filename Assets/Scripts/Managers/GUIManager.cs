@@ -24,6 +24,10 @@ public class GUIManager : MonoBehaviour
     // Non-Serialized
     private const string _emptyOption = "---";
 
+    private Button _fsmSelected;
+    private List<BlessingEffect> _fsmOptions;
+    private List<List<BlessingEffect>> _fsmTempSelections;
+
     //// MonoBehavior
     private void OnEnable()
     {
@@ -38,13 +42,29 @@ public class GUIManager : MonoBehaviour
     //// My Functions
     public void Init()
     {
+        _fsmTempSelections = Player.GetEmptyLoadout();
         FillFaceSelectionMenuLoadout();
         FillFaceSelectionMenuOptions(new List<BlessingEffect>());
         _faceSelectionMenu.SetActive(false);
         _menuPanel.SetActive(false);
-
+        
         _hpBar.maxValue = _playerStats.MaxHP;
-        _hpBar.value = _playerStats.HP;
+        _hpBar.value = _playerStats.HP; 
+    }
+
+    // Face Selection Menu
+    /// <summary>
+    /// Initialize this menu
+    /// </summary>
+    /// <param name="options">The options offered to the player</param>
+    private void OpenFaceSelectionMenu(List<BlessingEffect> options)
+    {
+        _fsmTempSelections = Player.GetEmptyLoadout();
+        FillFaceSelectionMenuLoadout();
+        FillFaceSelectionMenuOptions(options);
+        
+        _menuPanel.SetActive(true);
+        _faceSelectionMenu.SetActive(true);
     }
 
     private void FillFaceSelectionMenuLoadout()
@@ -52,8 +72,10 @@ public class GUIManager : MonoBehaviour
         for (int i = 0; i < 6; ++i)
         {
             string btnText = (i + 1) + ". " + _playerStats.Loadout[i].Name.ToString();
+            List<BlessingEffect> iterrationList = new List<BlessingEffect>(_playerStats.BlessingEffects[i]);
+            iterrationList.AddRange(_fsmTempSelections[i]);
 
-            foreach (BlessingEffect effect in _playerStats.BlessingEffects[i])
+            foreach (BlessingEffect effect in iterrationList)
             {
                 btnText += "\n" + effect.Name.ToString() + " (" + effect.Description + ")";
             }
@@ -62,7 +84,6 @@ public class GUIManager : MonoBehaviour
         }
     }
 
-    // Face Selection Menu
     /// <summary>
     /// Fills the options the player can select from the option table in the face selection menu
     /// </summary>
@@ -77,6 +98,8 @@ public class GUIManager : MonoBehaviour
             options.AddRange(Enumerable.Repeat<BlessingEffect>(null, 6 - options.Count));
         }
 
+        _fsmOptions = options;
+
         for (int i = 0; i < 6; ++i)
         {
             if (options[i] != null)
@@ -90,9 +113,46 @@ public class GUIManager : MonoBehaviour
         }
     }
 
+    private void SwapLoadoutOption(int loadout, int option)
+    {
+        _fsmSelected = null;
+        _fsmTempSelections[loadout].Add(_fsmOptions[option]);
+
+        Debug.Log("Loadout i: " + loadout + " Option i: " + option);
+    }
+
     //// Events
     private void OnHPChanged(float newHP)
     {
         _hpBar.value = newHP;
+    }
+
+    //// Getters and Setters
+    public Button FSMSelected
+    {
+        get
+        {
+            return _fsmSelected;
+        }
+        set
+        {
+            Button newValue = value;
+
+            if (_fsmSelected != null)
+            {
+                if (_fsmLoadoutButtons.Contains(_fsmSelected) && _fsmOptionButtons.Contains(newValue))
+                {
+                    SwapLoadoutOption(_fsmLoadoutButtons.IndexOf(_fsmSelected), _fsmOptionButtons.IndexOf(newValue));
+                    return;
+                }
+                else if (_fsmLoadoutButtons.Contains(newValue) && _fsmOptionButtons.Contains(_fsmSelected))
+                {
+                    SwapLoadoutOption(_fsmLoadoutButtons.IndexOf(newValue), _fsmOptionButtons.IndexOf(_fsmSelected));
+                    return;
+                }
+            }
+
+            _fsmSelected = newValue;
+        }
     }
 }
