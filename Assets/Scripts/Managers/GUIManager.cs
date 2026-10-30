@@ -7,14 +7,16 @@ using System.Linq;
 public class GUIManager : MonoBehaviour
 {
     //// Fields
-    // Outside Scripts
+    [Header("Outside Scripts")]
     [SerializeField] private Player _playerStats;
 
-    // Hud Sections
+    [Header("Hud Sections")]
+    // the yes/no panel is not a child of the menu panel
+    [SerializeField] private GameObject _yesNoPanel;
     [SerializeField] private GameObject _menuPanel;
     [SerializeField] private GameObject _faceSelectionMenu;
 
-    // Hud Ojects
+    [Header("Hud Ojects")]
     [SerializeField] private Slider _hpBar;
     // Should always be 6
     [SerializeField] private List<Button> _fsmLoadoutButtons;
@@ -47,6 +49,7 @@ public class GUIManager : MonoBehaviour
         FillFaceSelectionMenuOptions(new List<BlessingEffect>());
         _faceSelectionMenu.SetActive(false);
         _menuPanel.SetActive(false);
+        _yesNoPanel.SetActive(false);
         
         _hpBar.maxValue = _playerStats.MaxHP;
         _hpBar.value = _playerStats.HP; 
