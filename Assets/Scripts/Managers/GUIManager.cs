@@ -121,6 +121,17 @@ public class GUIManager : MonoBehaviour
         Debug.Log("Loadout i: " + loadout + " Option i: " + option);
     }
 
+    // Face Selection Menu Buttons (this does not include those in a list as those do weird things)
+    private void ResetButton()
+    {
+
+    }
+
+    private void AcceptButton()
+    {
+
+    }
+
     //// Events
     private void OnHPChanged(float newHP)
     {
