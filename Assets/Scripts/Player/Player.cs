@@ -31,6 +31,11 @@ public class Player: MonoBehaviour
         // todo
     }
 
+    public static List<List<BlessingEffect>> GetEmptyLoadout()
+    {
+        return new List<List<BlessingEffect>>();
+    }
+
     // Getter and Setter
     public string CharacterName
     {
