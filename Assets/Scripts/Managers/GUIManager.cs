@@ -181,7 +181,7 @@ public class GUIManager : MonoBehaviour
             {
                 foreach (BlessingEffect effect in _fsmTempSelections[i])
                 {
-                    effect.ApplyEffect();
+                    effect.ApplyEffect(i, _playerStats);
                 }
             }
 

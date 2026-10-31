@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class Player: MonoBehaviour
+public class Player: MonoBehaviour, IBlessable
 {
     // Field
     [SerializeField] private string _characterName;

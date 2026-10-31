@@ -29,9 +29,15 @@ public abstract class BlessingEffect
     }
 
     // Functions
-    public abstract void ApplyEffect();
+    public virtual void ApplyEffect(int face, IBlessable target)
+    {
+        target.BlessingEffects[face].Add(this);
+    }
 
-    public abstract void RemoveEffect();
+    public virtual void RemoveEffect(int face, IBlessable target)
+    {
+        target.BlessingEffects[face].Remove(this);
+    }
 
     // getters and Setters
     public virtual BlessingEffectNames Name
