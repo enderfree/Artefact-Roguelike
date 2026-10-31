@@ -139,7 +139,57 @@ public class GUIManager : MonoBehaviour
 
     public void AcceptButton()
     {
+        List<string> confirmationOptionText = new List<string>();
 
+        for (int i = 0; i < 6; ++i)
+        {
+            string text = (i + 1) + ". ";
+
+            if (_fsmTempSelections[i].Count == 0)
+            {
+                text += "no change";
+            }
+            else
+            {
+                text += "+";
+
+                for (int j = 0; j < _fsmTempSelections[i].Count; ++j)
+                {
+                    text += _fsmTempSelections[i][j].Name.ToString();
+
+                    if (j == _fsmTempSelections[i].Count - 2)
+                    {
+                        text += " and ";
+                    }
+                    else if (j == _fsmTempSelections[i].Count - 1)
+                    {
+                        // don't add anything after the last one
+                    }
+                    else
+                    {
+                        text += ", ";
+                    }
+                }
+            }
+
+            confirmationOptionText.Add(text);
+        }
+
+        _confirmationSelectionMenuManager.DisplaySelectionConfirmationMenu(confirmationOptionText,() => {
+            // OnYes
+            for (int i = 0; i < 6; ++i)
+            {
+                foreach (BlessingEffect effect in _fsmTempSelections[i])
+                {
+                    effect.ApplyEffect();
+                }
+            }
+
+            _confirmationSelectionMenuManager.CloseSelectionConfirmationMenu();
+            _faceSelectionMenu.SetActive(false);
+            _menuPanel.SetActive(false);
+            // OnNo
+        }, () => _confirmationSelectionMenuManager.CloseSelectionConfirmationMenu());
     }
 
     //// Events

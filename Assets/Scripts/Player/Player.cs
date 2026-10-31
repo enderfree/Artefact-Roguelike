@@ -33,7 +33,14 @@ public class Player: MonoBehaviour
 
     public static List<List<BlessingEffect>> GetEmptyLoadout()
     {
-        return new List<List<BlessingEffect>>();
+        return new List<List<BlessingEffect>>() { 
+            new List<BlessingEffect>(),
+            new List<BlessingEffect>(),
+            new List<BlessingEffect>(),
+            new List<BlessingEffect>(),
+            new List<BlessingEffect>(),
+            new List<BlessingEffect>()
+        };
     }
 
     // Getter and Setter
