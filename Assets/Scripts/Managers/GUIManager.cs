@@ -125,12 +125,17 @@ public class GUIManager : MonoBehaviour
     }
 
     // Face Selection Menu Buttons (this does not include those in a list as those do weird things)
-    private void ResetButton()
+    public void ResetButton()
     {
-
+        _yesNoMenuManager.DisplayYesNoMenu("Are you sure you want to discard your pending changes?", () => {
+            // onAccept
+            _fsmTempSelections = Player.GetEmptyLoadout();
+            _yesNoMenuManager.CloseYesNoMenu();
+            // onCancel
+        }, () => _yesNoMenuManager.CloseYesNoMenu());
     }
 
-    private void AcceptButton()
+    public void AcceptButton()
     {
 
     }
