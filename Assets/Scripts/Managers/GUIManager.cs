@@ -10,6 +10,7 @@ public class GUIManager : MonoBehaviour
     [Header("Outside Scripts")]
     [SerializeField] private Player _playerStats;
     [SerializeField] private YesNoMenuManager _yesNoMenuManager;
+    [SerializeField] private ConfirmationMenuManager _confirmationSelectionMenuManager;
 
     [Header("Hud Sections")]
     // the yes/no panel is not a child of the menu panel
@@ -50,6 +51,7 @@ public class GUIManager : MonoBehaviour
         _faceSelectionMenu.SetActive(false);
         _menuPanel.SetActive(false);
         _yesNoMenuManager.CloseYesNoMenu();
+        _confirmationSelectionMenuManager.CloseSelectionConfirmationMenu();
         
         _hpBar.maxValue = _playerStats.MaxHP;
         _hpBar.value = _playerStats.HP; 
