@@ -1,8 +1,11 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IBlessable
 {
     // Fields
+    private static List<List<BlessingEffect>> _enemyBlessings = new List<List<BlessingEffect>>();
+
     [SerializeField] private EnemyNames _name;
     [SerializeField] private float _maxHP;
     [SerializeField] private float _hp;
@@ -59,6 +62,18 @@ public class Enemy : MonoBehaviour
             {
                 _hp = value;
             }
+        }
+    }
+
+    /// <summary>
+    /// First list represents a dice face
+    /// Inner list contains all BlessingEffects that trigger on this face
+    /// </summary>
+    public virtual List<List<BlessingEffect>> BlessingEffects
+    {
+        get
+        {
+            return _enemyBlessings;
         }
     }
 }

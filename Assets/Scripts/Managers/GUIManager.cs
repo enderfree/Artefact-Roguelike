@@ -7,14 +7,17 @@ using System.Linq;
 public class GUIManager : MonoBehaviour
 {
     //// Fields
-    // Outside Scripts
+    [Header("Outside Scripts")]
     [SerializeField] private Player _playerStats;
+    [SerializeField] private YesNoMenuManager _yesNoMenuManager;
+    [SerializeField] private ConfirmationMenuManager _confirmationSelectionMenuManager;
 
-    // Hud Sections
+    [Header("Hud Sections")]
+    // the yes/no panel is not a child of the menu panel
     [SerializeField] private GameObject _menuPanel;
     [SerializeField] private GameObject _faceSelectionMenu;
 
-    // Hud Ojects
+    [Header("Hud Ojects")]
     [SerializeField] private Slider _hpBar;
     // Should always be 6
     [SerializeField] private List<Button> _fsmLoadoutButtons;
@@ -47,6 +50,8 @@ public class GUIManager : MonoBehaviour
         FillFaceSelectionMenuOptions(new List<BlessingEffect>());
         _faceSelectionMenu.SetActive(false);
         _menuPanel.SetActive(false);
+        _yesNoMenuManager.CloseYesNoMenu();
+        _confirmationSelectionMenuManager.CloseSelectionConfirmationMenu();
         
         _hpBar.maxValue = _playerStats.MaxHP;
         _hpBar.value = _playerStats.HP; 
@@ -122,14 +127,69 @@ public class GUIManager : MonoBehaviour
     }
 
     // Face Selection Menu Buttons (this does not include those in a list as those do weird things)
-    private void ResetButton()
+    public void ResetButton()
     {
-
+        _yesNoMenuManager.DisplayYesNoMenu("Are you sure you want to discard your pending changes?", () => {
+            // onAccept
+            _fsmTempSelections = Player.GetEmptyLoadout();
+            _yesNoMenuManager.CloseYesNoMenu();
+            // onCancel
+        }, () => _yesNoMenuManager.CloseYesNoMenu());
     }
 
-    private void AcceptButton()
+    public void AcceptButton()
     {
+        List<string> confirmationOptionText = new List<string>();
 
+        for (int i = 0; i < 6; ++i)
+        {
+            string text = (i + 1) + ". ";
+
+            if (_fsmTempSelections[i].Count == 0)
+            {
+                text += "no change";
+            }
+            else
+            {
+                text += "+";
+
+                for (int j = 0; j < _fsmTempSelections[i].Count; ++j)
+                {
+                    text += _fsmTempSelections[i][j].Name.ToString();
+
+                    if (j == _fsmTempSelections[i].Count - 2)
+                    {
+                        text += " and ";
+                    }
+                    else if (j == _fsmTempSelections[i].Count - 1)
+                    {
+                        // don't add anything after the last one
+                    }
+                    else
+                    {
+                        text += ", ";
+                    }
+                }
+            }
+
+            confirmationOptionText.Add(text);
+        }
+
+        _confirmationSelectionMenuManager.DisplaySelectionConfirmationMenu(confirmationOptionText,() => {
+            // OnYes
+            for (int i = 0; i < 6; ++i)
+            {
+                foreach (BlessingEffect effect in _fsmTempSelections[i])
+                {
+                    effect.ApplyEffect(i, _playerStats);
+                }
+            }
+
+            _confirmationSelectionMenuManager.CloseSelectionConfirmationMenu();
+            _faceSelectionMenu.SetActive(false);
+            _menuPanel.SetActive(false);
+            // OnNo
+        }, () => _confirmationSelectionMenuManager.CloseSelectionConfirmationMenu());
     }
 
     //// Events

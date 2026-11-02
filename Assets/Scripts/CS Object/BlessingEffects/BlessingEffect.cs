@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 public abstract class BlessingEffect
@@ -14,9 +15,10 @@ public abstract class BlessingEffect
     private int _mustBeOn;
     // maximum number of faces
     private int _canBeOn;
+    private Type _type;
 
     // Constructors
-    public BlessingEffect(BlessingEffectNames name, string description, BlessingRarities rarity, List<int> validFaces, int mustBeOn, int canBeOn)
+    public BlessingEffect(BlessingEffectNames name, string description, BlessingRarities rarity, List<int> validFaces, int mustBeOn, int canBeOn, Type type)
     {
         _name = name;
         _description = description;
@@ -24,14 +26,21 @@ public abstract class BlessingEffect
         _validFaces = validFaces;
         _mustBeOn = mustBeOn;
         _canBeOn = canBeOn;
+        _type = type;
 
         BlessingEffects.Add(this);
     }
 
     // Functions
-    public abstract void ApplyEffect();
+    public virtual void ApplyEffect(int face, IBlessable target)
+    {
+        target.BlessingEffects[face].Add(this);
+    }
 
-    public abstract void RemoveEffect();
+    public virtual void RemoveEffect(int face, IBlessable target)
+    {
+        target.BlessingEffects[face].Remove(this);
+    }
 
     // getters and Setters
     public virtual BlessingEffectNames Name
@@ -105,6 +114,18 @@ public abstract class BlessingEffect
         set
         {
             _canBeOn = value;
+        }
+    }
+
+    public virtual Type BlessingEffectType
+    {
+        get
+        {
+            return _type;
+        }
+        set
+        {
+            _type = value;
         }
     }
 }
