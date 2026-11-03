@@ -4,6 +4,10 @@ using System.Collections.Generic;
 public class Player: MonoBehaviour, IBlessable
 {
     // Field
+    [Header("External References")]
+    [SerializeField] private GameManager _gameManager;
+
+    [Header("Player Stats")]
     [SerializeField] private string _characterName;
     [SerializeField] private float _maxHP;
     [SerializeField] private float _hp;
@@ -22,8 +26,21 @@ public class Player: MonoBehaviour, IBlessable
     // Functions
     public void Init()
     {
-        // assign initial loadout
-        // assing initial weapon based on WhiteDice
+        AssingInitialLoadout();
+        _blessingPerFace = GetEmptyBlessingList();
+        Weapon = Loadout[_gameManager.WhiteDice];
+    }
+
+    private void AssingInitialLoadout()
+    {
+        Loadout = new List<Weapon>() {
+            Weapon.Weapons[WeaponNames.DefaultSword],
+            Weapon.Weapons[WeaponNames.DefaultSword],
+            Weapon.Weapons[WeaponNames.DefaultSword],
+            Weapon.Weapons[WeaponNames.DefaultBow],
+            Weapon.Weapons[WeaponNames.DefaultBow],
+            Weapon.Weapons[WeaponNames.DefaultBow]
+        };
     }
 
     private void Die()
@@ -31,7 +48,7 @@ public class Player: MonoBehaviour, IBlessable
         // todo
     }
 
-    public static List<List<BlessingEffect>> GetEmptyLoadout()
+    public static List<List<BlessingEffect>> GetEmptyBlessingList()
     {
         return new List<List<BlessingEffect>>() { 
             new List<BlessingEffect>(),

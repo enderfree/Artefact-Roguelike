@@ -14,9 +14,27 @@ public class GameManager : MonoBehaviour
         Init();
     }
 
-    // My Functions
+    // Register
+    private void RegisterMovesets()
+    {
+        // temp to test things before animations are shipped
+        new SwordMoveset(null);
+        new BowMoveset(null);
+    }
+
+    private void RegisterWeapons()
+    {
+        // temp to test things before animations are shipped
+        new Weapon("Default Sword", WeaponNames.DefaultSword, Moveset.Movesets[MovesetNames.Sword], null, 5f, typeof(Weapon));
+        new Weapon("Default Bow", WeaponNames.DefaultBow, Moveset.Movesets[MovesetNames.Bow], null, 5f, typeof(Weapon));
+    }
+
+    // Misc
     private void Init()
     {
+        RegisterMovesets();
+        RegisterWeapons();
+
         WhiteDice = RollWhiteDice();
         _playerStats.Init();
         _guiManager.Init();

@@ -45,7 +45,7 @@ public class GUIManager : MonoBehaviour
     //// My Functions
     public void Init()
     {
-        _fsmTempSelections = Player.GetEmptyLoadout();
+        _fsmTempSelections = Player.GetEmptyBlessingList();
         FillFaceSelectionMenuLoadout();
         FillFaceSelectionMenuOptions(new List<BlessingEffect>());
         _faceSelectionMenu.SetActive(false);
@@ -64,7 +64,7 @@ public class GUIManager : MonoBehaviour
     /// <param name="options">The options offered to the player</param>
     private void OpenFaceSelectionMenu(List<BlessingEffect> options)
     {
-        _fsmTempSelections = Player.GetEmptyLoadout();
+        _fsmTempSelections = Player.GetEmptyBlessingList();
         FillFaceSelectionMenuLoadout();
         FillFaceSelectionMenuOptions(options);
         
@@ -131,7 +131,7 @@ public class GUIManager : MonoBehaviour
     {
         _yesNoMenuManager.DisplayYesNoMenu("Are you sure you want to discard your pending changes?", () => {
             // onAccept
-            _fsmTempSelections = Player.GetEmptyLoadout();
+            _fsmTempSelections = Player.GetEmptyBlessingList();
             _yesNoMenuManager.CloseYesNoMenu();
             // onCancel
         }, () => _yesNoMenuManager.CloseYesNoMenu());
