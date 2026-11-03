@@ -3,5 +3,9 @@ using UnityEngine;
 
 public interface IBlessable
 {
+    /// <summary>
+    /// First list represents a dice face
+    /// Inner list contains all BlessingEffects that trigger on this face
+    /// </summary>
     public List<List<BlessingEffect>> BlessingEffects { get; }
 }
