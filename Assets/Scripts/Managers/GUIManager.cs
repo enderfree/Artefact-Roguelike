@@ -1,8 +1,9 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
-using TMPro;
 using System.Linq;
+using TMPro;
+using UnityEngine;
+using UnityEngine.ProBuilder;
+using UnityEngine.UI;
 
 public class GUIManager : MonoBehaviour
 {
@@ -35,11 +36,13 @@ public class GUIManager : MonoBehaviour
     private void OnEnable()
     {
         Player.OnHPChanged += OnHPChanged;
+        Player.OnMaxHPChanged += OnMaxHPChanged;
     }
 
     private void OnDisable()
     {
         Player.OnHPChanged -= OnHPChanged;
+        Player.OnMaxHPChanged -= OnMaxHPChanged;
     }
 
     //// My Functions
@@ -181,7 +184,7 @@ public class GUIManager : MonoBehaviour
             {
                 foreach (BlessingEffect effect in _fsmTempSelections[i])
                 {
-                    effect.ApplyEffect(i, _playerStats);
+                    _playerStats.BlessingEffects[i].Add(effect);
                 }
             }
 
@@ -196,6 +199,15 @@ public class GUIManager : MonoBehaviour
     private void OnHPChanged(float newHP)
     {
         _hpBar.value = newHP;
+    }
+
+    private void OnMaxHPChanged(float newMaxHP)
+    {
+        // og scale is 1, so we need a percentage on that scale
+        float percentIncrease = (newMaxHP - _playerStats.DefaultMaxHP)/100f;
+
+        _hpBar.maxValue = newMaxHP;
+        _hpBar.transform.localScale += new Vector3(percentIncrease, percentIncrease, percentIncrease);
     }
 
     //// Getters and Setters
