@@ -5,10 +5,11 @@ using System;
 public class Weapon
 {
     // Fields
-    public static List<Weapon> Weapons = new List<Weapon>();
+    public static Dictionary<WeaponNames, Weapon> Weapons = new Dictionary<WeaponNames, Weapon>();
 
     // I want to be able to add things to the name of the weapon mid game 
     [SerializeField] private string _name;
+    [SerializeField] private WeaponNames _weaponID;
     [SerializeField] private Moveset _moveset;
     [SerializeField] private GameObject _prefab;
     [SerializeField] private float _damage;
@@ -18,16 +19,17 @@ public class Weapon
     public Dictionary<string, Action> Combos = new Dictionary<string, Action>();
 
     // Constructors
-    public Weapon(string name, Moveset moveset, GameObject prefab, float damage, Type type)
+    public Weapon(string name, WeaponNames weaponID, Moveset moveset, GameObject prefab, float damage, Type type)
     {
         _name = name;
+        _weaponID = weaponID;
         _moveset = moveset;
         _prefab = prefab;
         _damage = damage;
         _type = type;
 
         FillCombos();
-        Weapons.Add(this);
+        Weapons.Add(_weaponID, this);
     }
 
     // Functions
@@ -49,6 +51,18 @@ public class Weapon
         set
         {
             _name = value;
+        }
+    }
+
+    public virtual WeaponNames WeaponID
+    {
+        get
+        {
+            return _weaponID;
+        }
+        set
+        {
+            _weaponID = value;
         }
     }
 

@@ -12,9 +12,9 @@ public abstract class BlessingEffect
     // 0-5, not 1-6 for list utilities
     private List<int> _validFaces = new List<int>(); 
     // minimum number of faces
-    private int _mustBeOn;
+    private int _mustBeOn; // will probably be reworked again
     // maximum number of faces
-    private int _canBeOn;
+    private int _canBeOn; // will probably be reworked again
     private Type _type;
 
     // Constructors
@@ -32,15 +32,9 @@ public abstract class BlessingEffect
     }
 
     // Functions
-    public virtual void ApplyEffect(int face, IBlessable target)
-    {
-        target.BlessingEffects[face].Add(this);
-    }
+    public abstract void ApplyEffect(IBlessable target);
 
-    public virtual void RemoveEffect(int face, IBlessable target)
-    {
-        target.BlessingEffects[face].Remove(this);
-    }
+    public abstract void RemoveEffect(IBlessable target);
 
     // getters and Setters
     public virtual BlessingEffectNames Name
