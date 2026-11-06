@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Field
+    [SerializeField] private WeaponRegisterer _weaponRegisterer;
     [SerializeField] private Player _playerStats;
     [SerializeField] private GUIManager _guiManager;
 
@@ -22,18 +23,11 @@ public class GameManager : MonoBehaviour
         new BowMoveset(null);
     }
 
-    private void RegisterWeapons()
-    {
-        // temp to test things before animations are shipped
-        new Weapon("Default Sword", WeaponNames.DefaultSword, Moveset.Movesets[MovesetNames.Sword], null, 5f, typeof(Weapon));
-        new Weapon("Default Bow", WeaponNames.DefaultBow, Moveset.Movesets[MovesetNames.Bow], null, 5f, typeof(Weapon));
-    }
-
     // Misc
     private void Init()
     {
         RegisterMovesets();
-        RegisterWeapons();
+        _weaponRegisterer.Init();
 
         WhiteDice = RollWhiteDice();
         _playerStats.Init();
