@@ -6,4 +6,14 @@ public class SwordMoveset : Moveset
     {
 
     }
+
+    public void LightAttack()
+    {
+        MovesetAnimator.SetTrigger("LightAttack1");
+    }
+
+    public void HeavyAttack()
+    {
+        MovesetAnimator.SetTrigger("HeavyAttack");
+    }
 }
