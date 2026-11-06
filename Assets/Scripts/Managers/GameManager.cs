@@ -15,18 +15,9 @@ public class GameManager : MonoBehaviour
         Init();
     }
 
-    // Register
-    private void RegisterMovesets()
-    {
-        // temp to test things before animations are shipped
-        new SwordMoveset(null);
-        new BowMoveset(null);
-    }
-
     // Misc
     private void Init()
     {
-        RegisterMovesets();
         _weaponRegisterer.Init();
 
         WhiteDice = RollWhiteDice();

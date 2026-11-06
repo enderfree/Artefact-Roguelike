@@ -10,7 +10,11 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
     public InputActionReference MoveAction;
     public InputActionReference JumpAction;
     public InputActionReference SprintAction;
+    public InputActionReference AttackAction;
+    public InputActionReference HeavyAttackAction;
     public CinemachineCamera PlayerCamera;
+
+    public Player PlayerStats;
 
     public float MaxGroundSpeed = 10f;
     public float MaxAirSpeed = 5f;
@@ -32,6 +36,8 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
     private Vector3 _lookInput;
     private bool _jumpPressed;
     private bool _sprintPressed;
+    private bool _attackPressed;
+    private bool _heavyAttackPressed;
 
     private bool _hasJumpedThisFrame;
     private float _timeSinceJumpRequested = Mathf.Infinity;
@@ -129,6 +135,9 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
         {
             _timeSinceJumpRequested = 0f;
         }
+
+        AttackPressed = (AttackAction.action.ReadValue<float>() > 0);
+        HeavyAttackPressed = (HeavyAttackAction.action.ReadValue<float>() > 0);
     }
 
     private Quaternion GetCameraPlanarRotation(Quaternion cameraRotation)
@@ -223,5 +232,51 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
     private void CombatListener()
     {
 
+    }
+
+    private bool AttackPressed
+    {
+        get
+        {
+            return _attackPressed;
+        }
+        set
+        {
+            if (_attackPressed != value)
+            {
+                _attackPressed = value;
+
+                if (_attackPressed)
+                {
+                    if (PlayerStats.Weapon.Moveset is SwordMoveset moveset)
+                    {
+                        moveset.LightAttack();
+                    }
+                }
+            }
+        }
+    }
+
+    private bool HeavyAttackPressed
+    {
+        get
+        {
+            return _heavyAttackPressed;
+        }
+        set
+        {
+            if (_heavyAttackPressed != value)
+            {
+                _heavyAttackPressed = value;
+
+                if (_heavyAttackPressed)
+                {
+                    if (PlayerStats.Weapon.Moveset is SwordMoveset moveset)
+                    {
+                        moveset.HeavyAttack();
+                    }
+                }
+            }
+        }
     }
 }

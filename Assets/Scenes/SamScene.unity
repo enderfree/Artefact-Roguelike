@@ -590,6 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77bc519f6f93f1c4a9f7f6db021f47b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponRegisterer
+  _swordAnimator: {fileID: 4759583957827215700}
   _defaultWeaponPrefab: {fileID: 3409926492175524348, guid: 7379582cd622fba46a400c380acab51f, type: 3}
 --- !u!4 &718224513
 Transform:
@@ -2161,9 +2162,21 @@ PrefabInstance:
       value: CharacterController
       objectReference: {fileID: 0}
     - target: {fileID: 7586833664016760090, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+      propertyPath: PlayerStats
+      value: 
+      objectReference: {fileID: 1858165042}
+    - target: {fileID: 7586833664016760090, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+      propertyPath: AttackAction
+      value: 
+      objectReference: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    - target: {fileID: 7586833664016760090, guid: da8f976b544aa994c8e61552e2139007, type: 3}
       propertyPath: PlayerCamera
       value: 
       objectReference: {fileID: 1773940343}
+    - target: {fileID: 7586833664016760090, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+      propertyPath: HeavyAttackAction
+      value: 
+      objectReference: {fileID: -1482353967722823017, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2177,6 +2190,11 @@ GameObject:
 --- !u!4 &4759583957827215699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4782189292531779662, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+  m_PrefabInstance: {fileID: 2096418251964153410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4759583957827215700 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6895217519585327762, guid: da8f976b544aa994c8e61552e2139007, type: 3}
   m_PrefabInstance: {fileID: 2096418251964153410}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
