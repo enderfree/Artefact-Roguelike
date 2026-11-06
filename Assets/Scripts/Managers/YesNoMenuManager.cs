@@ -6,9 +6,9 @@ using System;
 public class YesNoMenuManager : MonoBehaviour
 {
     // Fields
-    [SerializeField] TMP_Text _text;
-    [SerializeField] Button _yes;
-    [SerializeField] Button _no;
+    [SerializeField] private TMP_Text _text;
+    [SerializeField] private Button _yes;
+    [SerializeField] private Button _no;
 
     private Action _onYes;
     private Action _onNo;

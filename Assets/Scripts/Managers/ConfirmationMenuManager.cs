@@ -7,7 +7,7 @@ using TMPro;
 public class ConfirmationMenuManager : MonoBehaviour
 {
     // these should be the 6 buttons from this menu
-    [SerializeField] List<Button> _toConfirm;
+    [SerializeField] private List<Button> _toConfirm;
 
     private Action _onYes;
     private Action _onNo;
