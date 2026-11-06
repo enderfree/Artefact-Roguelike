@@ -2112,6 +2112,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 755023999}
+    - target: {fileID: 2160496949435205455, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+      propertyPath: _weaponHolder
+      value: 
+      objectReference: {fileID: 2096418251964153411}
     - target: {fileID: 2956330803921158591, guid: da8f976b544aa994c8e61552e2139007, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2165,6 +2169,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+--- !u!1 &2096418251964153411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 162523669865199613, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+  m_PrefabInstance: {fileID: 2096418251964153410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4759583957827215699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4782189292531779662, guid: da8f976b544aa994c8e61552e2139007, type: 3}

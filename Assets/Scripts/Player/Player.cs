@@ -6,6 +6,7 @@ public class Player: MonoBehaviour, IBlessable
     // Field
     [Header("External References")]
     [SerializeField] private GameManager _gameManager;
+    [SerializeField] private GameObject _weaponHolder;
 
     [Header("Player Stats")]
     [SerializeField] private string _characterName;
@@ -121,7 +122,15 @@ public class Player: MonoBehaviour, IBlessable
         }
         set
         {
+            // we need an animation in there
+            if (_weapon != null)
+            {
+                Destroy(_weapon.Prefab);
+            }
+
             _weapon = value;
+
+            Instantiate(_weapon.Prefab, _weaponHolder.transform);
         }
     }
 
