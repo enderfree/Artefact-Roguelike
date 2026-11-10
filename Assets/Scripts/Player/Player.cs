@@ -43,9 +43,12 @@ public class Player: MonoBehaviour, IBlessable
             Weapon.Weapons[WeaponNames.DefaultSword],
             Weapon.Weapons[WeaponNames.DefaultSword],
             Weapon.Weapons[WeaponNames.DefaultSword],
-            Weapon.Weapons[WeaponNames.DefaultBow],
-            Weapon.Weapons[WeaponNames.DefaultBow],
-            Weapon.Weapons[WeaponNames.DefaultBow]
+            Weapon.Weapons[WeaponNames.DefaultSword],
+            Weapon.Weapons[WeaponNames.DefaultSword],
+            Weapon.Weapons[WeaponNames.DefaultSword]
+            //Weapon.Weapons[WeaponNames.DefaultBow],
+            //Weapon.Weapons[WeaponNames.DefaultBow],
+            //Weapon.Weapons[WeaponNames.DefaultBow]
         };
     }
 
