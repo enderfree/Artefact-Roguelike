@@ -80,6 +80,17 @@ public class Player: MonoBehaviour, IBlessable
         };
     }
 
+    // called by animation
+    public void ActivateWeaponHitbox()
+    {
+
+    }
+
+    public void DeactivateWeaponHitbox()
+    {
+
+    }
+
     // Getter and Setter
     public string CharacterName
     {

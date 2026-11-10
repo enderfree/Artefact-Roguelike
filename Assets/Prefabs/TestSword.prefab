@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2224060607647085323}
   - component: {fileID: 2397747640369688590}
   - component: {fileID: 1762799933501388573}
+  - component: {fileID: 4434306901352567476}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: Untagged
@@ -125,6 +126,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915bbd8dcd9d4b640ae134eb7ddca4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HideInGame
+--- !u!114 &4434306901352567476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408311074294419584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d702ad154376346bc641e98293171d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &2494251328935102192
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,8 +252,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3409926492175524348}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.9513377, y: -0.034282234, z: -0.20293078, w: 0.22934777}
+  m_LocalPosition: {x: 13.953279, y: -19.868969, z: 10.957231}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
