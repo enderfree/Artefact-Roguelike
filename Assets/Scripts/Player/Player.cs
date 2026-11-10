@@ -14,6 +14,7 @@ public class Player: MonoBehaviour, IBlessable
     [SerializeField] private float _hp;
 
     private Weapon _weapon;
+    private GameObject _weaponInstance;
     private float _defaultMaxHP;
 
     // Face is implied by order in List
@@ -27,6 +28,16 @@ public class Player: MonoBehaviour, IBlessable
 
     public delegate void MaxHPChanged(float newMaxHP);
     public static event MaxHPChanged OnMaxHPChanged;
+
+    // Monobehavior
+    private void FixedUpdate()
+    {
+        if (_weaponInstance != null)
+        {
+            _weaponInstance.transform.position = _weaponHolder.transform.position;
+            _weaponInstance.transform.rotation = _weaponHolder.transform.rotation;
+        }
+    }
 
     // Functions
     public void Init()
@@ -133,7 +144,7 @@ public class Player: MonoBehaviour, IBlessable
 
             _weapon = value;
 
-            Instantiate(_weapon.Prefab, _weaponHolder.transform);
+            _weaponInstance = Instantiate(_weapon.Prefab);
         }
     }
 
