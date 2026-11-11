@@ -7671,7 +7671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096898d3015ef0d4db6806720e285cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room
-  _name: 2
+  _name: 3
   _playerSpawn: {fileID: 4207804763590618585}
   _enemySpawns:
   - {fileID: 6632328414718234864}

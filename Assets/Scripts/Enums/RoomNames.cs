@@ -2,5 +2,6 @@ public enum RoomNames
 {
     Hallway, 
     Hexagon, 
-    Stairs
+    Stairs1,
+    Stairs2
 }
