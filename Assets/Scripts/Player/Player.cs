@@ -7,11 +7,14 @@ public class Player: MonoBehaviour, IBlessable
     [Header("External References")]
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private GameObject _weaponHolder;
+    [SerializeField] private MyCharacterController _characterController;
 
     [Header("Player Stats")]
     [SerializeField] private string _characterName;
     [SerializeField] private float _maxHP;
     [SerializeField] private float _hp;
+    [SerializeField] private float _attackSpeed;
+    [SerializeField] private float _movementSpeed;
 
     private Weapon _weapon;
     private GameObject _weaponInstance;
@@ -128,6 +131,41 @@ public class Player: MonoBehaviour, IBlessable
         }
     }
 
+    /// <summary>
+    /// 1 == 100%
+    /// </summary>
+    public virtual float AttackSpeed
+    {
+        get
+        {
+            return _attackSpeed;
+        }
+        set
+        {
+            _attackSpeed = value;
+        }
+    }
+
+    public virtual float MovementSpeed
+    {
+        get
+        {
+            return _movementSpeed;
+        }
+        set
+        {
+            _characterController.MaxGroundSpeed /= _movementSpeed;
+            _characterController.MaxAirSpeed /= _movementSpeed;
+            _characterController.MaxRunSpeed /= _movementSpeed;
+
+            _movementSpeed = value;
+
+            _characterController.MaxGroundSpeed *= _movementSpeed;
+            _characterController.MaxAirSpeed *= _movementSpeed;
+            _characterController.MaxRunSpeed *= _movementSpeed;
+        }
+    }
+
     public Weapon Weapon
     {
         get
@@ -157,6 +195,18 @@ public class Player: MonoBehaviour, IBlessable
         get
         {
             return _weaponInstance;
+        }
+    }
+
+    public float Damage
+    {
+        get
+        {
+            return Weapon.Damage;
+        }
+        set
+        {
+            Weapon.Damage = value;
         }
     }
 

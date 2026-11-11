@@ -10,4 +10,7 @@ public interface IBlessable
     public List<List<BlessingEffect>> BlessingEffects { get; }
     public float MaxHP { get; set; }
     public float HP { get; set; }
+    public float AttackSpeed { get; set; }
+    public float MovementSpeed { get; set; }
+    public float Damage { get; set; }
 }

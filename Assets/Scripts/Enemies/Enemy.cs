@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour, IBlessable
     [SerializeField] private EnemyNames _name;
     [SerializeField] private float _maxHP;
     [SerializeField] private float _hp;
+    [SerializeField] private float _attackSpeed;
+    [SerializeField] private float _movementSpeed;
+    [SerializeField] private float _damage;
 
     // Functions
     private void Die()
@@ -62,6 +65,45 @@ public class Enemy : MonoBehaviour, IBlessable
             {
                 _hp = value;
             }
+        }
+    }
+
+    /// <summary>
+    /// 1 == 100%
+    /// </summary>
+    public virtual float AttackSpeed
+    {
+        get
+        {
+            return _attackSpeed;
+        }
+        set
+        {
+            _attackSpeed = value;
+        }
+    }
+
+    public virtual float MovementSpeed
+    {
+        get
+        {
+            return _movementSpeed;
+        }
+        set
+        {
+            _movementSpeed = value;
+        }
+    }
+
+    public virtual float Damage
+    {
+        get
+        {
+            return _damage;
+        }
+        set
+        {
+            _damage = value;
         }
     }
 

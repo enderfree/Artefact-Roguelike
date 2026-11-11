@@ -13,6 +13,7 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
     public InputActionReference AttackAction;
     public InputActionReference HeavyAttackAction;
     public CinemachineCamera PlayerCamera;
+    public Animator PlayerAnimator;
 
     public Player PlayerStats;
 
@@ -250,6 +251,8 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
                 {
                     if (PlayerStats.Weapon.Moveset is SwordMoveset moveset)
                     {
+                        // I'm doing this here instead of in the input listener so it's not constantly assigned
+                        PlayerAnimator.speed = PlayerStats.AttackSpeed;
                         moveset.LightAttack();
                     }
                 }
@@ -273,6 +276,8 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
                 {
                     if (PlayerStats.Weapon.Moveset is SwordMoveset moveset)
                     {
+                        // I'm doing this here instead of in the input listener so it's not constantly assigned
+                        PlayerAnimator.speed = PlayerStats.AttackSpeed;
                         moveset.HeavyAttack();
                     }
                 }

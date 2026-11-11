@@ -15,7 +15,7 @@ public class MeleeHurtBox : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
         {
-            enemy.HP -= _player.Weapon.Damage;
+            enemy.HP -= _player.Damage;
         }
     }
 }

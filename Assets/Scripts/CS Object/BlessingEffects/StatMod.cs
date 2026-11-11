@@ -28,6 +28,15 @@ public class StatMod : BlessingEffect
                 target.HP *= Multiplyer;
                 target.MaxHP *= Multiplyer;
                 break;
+            case PlayerStatNames.AttackSpeed:
+                target.AttackSpeed *= Multiplyer;
+                break;
+            case PlayerStatNames.Speed:
+                target.MovementSpeed *= Multiplyer;
+                break;
+            case PlayerStatNames.AttackDamage:
+                target.Damage *= Multiplyer;
+                break;
             default: 
                 Debug.Log("StatMod/ApplyEffect: Blessing modifies an unhandled stat.");
                 break;
@@ -41,6 +50,15 @@ public class StatMod : BlessingEffect
             case PlayerStatNames.Health:
                 target.MaxHP /= Multiplyer;
                 target.HP /= Multiplyer;
+                break;
+            case PlayerStatNames.AttackSpeed:
+                target.AttackSpeed /= Multiplyer;
+                break;
+            case PlayerStatNames.Speed:
+                target.MovementSpeed /= Multiplyer;
+                break;
+            case PlayerStatNames.AttackDamage:
+                target.Damage /= Multiplyer;
                 break;
             default:
                 Debug.Log("StatMod/RemoveEffect: Blessing modifies an unhandled stat.");

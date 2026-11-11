@@ -1004,6 +1004,9 @@ MonoBehaviour:
   _name: 0
   _maxHP: 2
   _hp: 2
+  _attackSpeed: 0
+  _movementSpeed: 0
+  _damage: 0
 --- !u!136 &1285702188
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2392,6 +2395,10 @@ PrefabInstance:
       value: -0.00000013708069
       objectReference: {fileID: 0}
     - target: {fileID: 2160496949435205455, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+      propertyPath: _attackSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160496949435205455, guid: da8f976b544aa994c8e61552e2139007, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 755023999}
@@ -2399,6 +2406,14 @@ PrefabInstance:
       propertyPath: _weaponHolder
       value: 
       objectReference: {fileID: 2096418251964153411}
+    - target: {fileID: 2160496949435205455, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+      propertyPath: _movementSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160496949435205455, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+      propertyPath: _characterController
+      value: 
+      objectReference: {fileID: 2096418251964153412}
     - target: {fileID: 2320405081736936391, guid: da8f976b544aa994c8e61552e2139007, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 33.777954
@@ -2972,6 +2987,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1773940343}
     - target: {fileID: 7586833664016760090, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+      propertyPath: PlayerAnimator
+      value: 
+      objectReference: {fileID: 4759583957827215700}
+    - target: {fileID: 7586833664016760090, guid: da8f976b544aa994c8e61552e2139007, type: 3}
       propertyPath: HeavyAttackAction
       value: 
       objectReference: {fileID: -1482353967722823017, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -3089,6 +3108,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 162523669865199613, guid: da8f976b544aa994c8e61552e2139007, type: 3}
   m_PrefabInstance: {fileID: 2096418251964153410}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2096418251964153412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7586833664016760090, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+  m_PrefabInstance: {fileID: 2096418251964153410}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdab4847fd513f14c893c72431251001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MyCharacterController
 --- !u!4 &4759583957827215699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4782189292531779662, guid: da8f976b544aa994c8e61552e2139007, type: 3}
