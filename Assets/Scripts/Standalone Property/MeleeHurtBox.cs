@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class MeleeHurtBox : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // Fields
+    private Player _player;
+
+    // Monobehavior
+    private void Awake()
     {
-        
+        _player = GameObject.FindAnyObjectByType<Player>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
+        {
+            enemy.HP -= _player.Weapon.Damage;
+        }
     }
 }
