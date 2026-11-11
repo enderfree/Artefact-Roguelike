@@ -3,9 +3,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Field
+    [SerializeField] private RoomManager _roomManager;
     [SerializeField] private WeaponRegisterer _weaponRegisterer;
     [SerializeField] private Player _playerStats;
     [SerializeField] private GUIManager _guiManager;
+
+    private GameObject _activeRoom;
 
     public int WhiteDice;
 
@@ -18,11 +21,15 @@ public class GameManager : MonoBehaviour
     // Misc
     private void Init()
     {
+        _roomManager.Init();
         _weaponRegisterer.Init();
 
         WhiteDice = RollWhiteDice();
         _playerStats.Init();
         _guiManager.Init();
+
+        // static for playtest, gonna ranomize the rooms later
+        ActiveRoom = _roomManager.RoomPrefabs[RoomNames.Hexagon];
     }
 
     /// <summary>
@@ -52,5 +59,20 @@ public class GameManager : MonoBehaviour
     {
         // animation
         return Roll1d6();
+    }
+
+    // Getters and Setters
+    public GameObject ActiveRoom
+    {
+        get
+        {
+            return _activeRoom;
+        }
+        set
+        {
+            Destroy(_activeRoom);
+            _activeRoom = Instantiate(value);
+            _playerStats.transform.position = _activeRoom.GetComponent<Room>().PlayerSpawn.transform.position;
+        }
     }
 }
