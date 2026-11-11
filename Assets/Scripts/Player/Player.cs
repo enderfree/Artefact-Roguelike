@@ -80,17 +80,6 @@ public class Player: MonoBehaviour, IBlessable
         };
     }
 
-    // called by animation
-    public void ActivateWeaponHitbox()
-    {
-
-    }
-
-    public void DeactivateWeaponHitbox()
-    {
-
-    }
-
     // Getter and Setter
     public string CharacterName
     {
@@ -156,6 +145,18 @@ public class Player: MonoBehaviour, IBlessable
             _weapon = value;
 
             _weaponInstance = Instantiate(_weapon.Prefab);
+        }
+    }
+
+    /// <summary>
+    /// This gives access to the weapon instance, but does not let it be replaced
+    /// Replace the weapon to do so, not the instance directly
+    /// </summary>
+    public GameObject WeaponInstance
+    {
+        get
+        {
+            return _weaponInstance;
         }
     }
 
