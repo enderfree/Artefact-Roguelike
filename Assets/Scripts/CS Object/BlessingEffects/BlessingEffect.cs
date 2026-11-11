@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public abstract class BlessingEffect
 {
     // Fields
-    public static List<BlessingEffect> BlessingEffects = new List<BlessingEffect>();
+    public static Dictionary<BlessingRarities, List<BlessingEffect>> EffectPerRarity = new Dictionary<BlessingRarities, List<BlessingEffect>>();
 
     private BlessingEffectNames _name;
     private string _description;
@@ -28,13 +28,36 @@ public abstract class BlessingEffect
         _canBeOn = canBeOn;
         _type = type;
 
-        BlessingEffects.Add(this);
+        EffectPerRarity[_rarity].Add(this);
     }
 
     // Functions
     public abstract void ApplyEffect(IBlessable target);
 
     public abstract void RemoveEffect(IBlessable target);
+
+    public static void Init()
+    {
+        foreach (BlessingRarities blessingRarities in Enum.GetValues(typeof(BlessingRarities)))
+        {
+            EffectPerRarity.Add(blessingRarities, new List<BlessingEffect>());
+        }
+
+        RegisterBlessingEffects();
+    }
+
+    private static void RegisterBlessingEffects()
+    {
+        List<int> allFaces = new List<int>() { 0, 1, 2, 3, 4, 5 };
+
+        new StatMod(PlayerStatNames.AttackSpeed, 1.1f, allFaces, 0, 1);
+        new StatMod(PlayerStatNames.Speed, 1.1f, allFaces, 0, 1);
+        new StatMod(PlayerStatNames.AttackDamage, 1.1f, allFaces, 0, 1);
+
+        new StatMod(PlayerStatNames.AttackSpeed, 0.9f, allFaces, 0, 1);
+        new StatMod(PlayerStatNames.Speed, 0.9f, allFaces, 0, 1);
+        new StatMod(PlayerStatNames.AttackDamage, 0.9f, allFaces, 0, 1);
+    }
 
     // getters and Setters
     public virtual BlessingEffectNames Name

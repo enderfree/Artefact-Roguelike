@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     {
         _roomManager.Init();
         _weaponRegisterer.Init();
+        BlessingEffect.Init();
 
         WhiteDice = RollWhiteDice();
         _playerStats.Init();
