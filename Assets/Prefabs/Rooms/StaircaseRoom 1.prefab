@@ -5876,6 +5876,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2100252781804930903}
+  - component: {fileID: 461395477878777386}
   m_Layer: 0
   m_Name: StaircaseRoom 1
   m_TagString: Untagged
@@ -5915,6 +5916,27 @@ Transform:
   - {fileID: 1881213305694193303}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &461395477878777386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031265783995235807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 096898d3015ef0d4db6806720e285cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Room
+  _name: 2
+  _playerSpawn: {fileID: 5955304745407109151}
+  _enemySpawns:
+  - {fileID: 7887590727260243176}
+  - {fileID: 7332411253049366843}
+  - {fileID: 5869111919563424101}
+  - {fileID: 4242560585623140751}
+  - {fileID: 7561335720032018901}
+  - {fileID: 1881213305694193303}
 --- !u!1 &7632911384859741303
 GameObject:
   m_ObjectHideFlags: 0

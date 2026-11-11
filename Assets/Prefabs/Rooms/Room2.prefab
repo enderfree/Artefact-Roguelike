@@ -3238,6 +3238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3258721682942270858}
+  - component: {fileID: 2491410470469394121}
   m_Layer: 0
   m_Name: Room2
   m_TagString: Untagged
@@ -3277,6 +3278,27 @@ Transform:
   - {fileID: 2583128825368350168}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2491410470469394121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5716369702720607727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 096898d3015ef0d4db6806720e285cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Room
+  _name: 1
+  _playerSpawn: {fileID: 6860213888000488430}
+  _enemySpawns:
+  - {fileID: 7762760232886547671}
+  - {fileID: 4161059563404434380}
+  - {fileID: 6438386953613764302}
+  - {fileID: 4059698694068075937}
+  - {fileID: 3437005997165782172}
+  - {fileID: 2583128825368350168}
 --- !u!1 &5794856716478035194
 GameObject:
   m_ObjectHideFlags: 0
