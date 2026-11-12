@@ -60,6 +60,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -14.999998
       objectReference: {fileID: 0}
+    - target: {fileID: -7305716356070791964, guid: 1593311217920a24ab5869c2650eae2b, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7305716356070791964, guid: 1593311217920a24ab5869c2650eae2b, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2659410965864180831, guid: 1593311217920a24ab5869c2650eae2b, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1593311217920a24ab5869c2650eae2b, type: 3}
       propertyPath: m_Name
       value: OnePipEnemy
