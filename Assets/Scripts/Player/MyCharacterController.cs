@@ -12,7 +12,7 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
     public InputActionReference SprintAction;
     public InputActionReference AttackAction;
     public InputActionReference HeavyAttackAction;
-    public CinemachineCamera PlayerCamera;
+    public CinemachineOrbitalFollow PlayerCamera;
     public Animator PlayerAnimator;
 
     public Player PlayerStats;
@@ -124,7 +124,7 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
         _moveInput = new Vector3(moveActionInput.x, 0, moveActionInput.y);
         _moveInput = Vector3.ClampMagnitude(_moveInput, 1);
 
-        _moveInput = GetCameraPlanarRotation(PlayerCamera.State.GetFinalOrientation()) * _moveInput;
+        _moveInput = Quaternion.Euler(0f, PlayerCamera.HorizontalAxis.Value, 0f) * _moveInput;
 
         _lookInput = _moveInput;
 
