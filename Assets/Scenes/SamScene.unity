@@ -329,8 +329,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25340134, y: 0.000000032015418, z: -0.000000008386473, w: 0.9673613}
-  m_LocalPosition: {x: 0, y: 2.25, z: -4}
+  m_LocalRotation: {x: -0.0000000018620641, y: -1.394101e-19, z: -2.5959054e-28, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1141,7 +1141,7 @@ MonoBehaviour:
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
   TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 0.5, y: 0.5}
+  Damping: {x: 0.1, y: 0.1}
   Lookahead:
     Enabled: 0
     Time: 0
@@ -1170,14 +1170,14 @@ MonoBehaviour:
   Radius: 5
   Orbits:
     Top:
-      Radius: 2
-      Height: 5
+      Radius: 3
+      Height: 3
     Center:
       Radius: 4
-      Height: 2.25
+      Height: 0
     Bottom:
-      Radius: 2.5
-      Height: 0.1
+      Radius: 3
+      Height: -1
     SplineCurvature: 0.5
   RecenteringTarget: 2
   HorizontalAxis:
@@ -1230,7 +1230,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 4759583957827215699}
+    TrackingTarget: {fileID: 2096418251964153413}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -1261,8 +1261,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773940339}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25340134, y: 0.000000032015418, z: -0.000000008386474, w: 0.9673613}
-  m_LocalPosition: {x: 0, y: 2.25, z: -4}
+  m_LocalRotation: {x: -0.0000000018620641, y: -1.394101e-19, z: 1.7923194e-19, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2942,7 +2942,7 @@ PrefabInstance:
     - target: {fileID: 7586833664016760090, guid: da8f976b544aa994c8e61552e2139007, type: 3}
       propertyPath: PlayerCamera
       value: 
-      objectReference: {fileID: 1773940343}
+      objectReference: {fileID: 0}
     - target: {fileID: 7586833664016760090, guid: da8f976b544aa994c8e61552e2139007, type: 3}
       propertyPath: PlayerAnimator
       value: 
@@ -3076,14 +3076,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdab4847fd513f14c893c72431251001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MyCharacterController
+--- !u!4 &2096418251964153413 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7802149986851235880, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+  m_PrefabInstance: {fileID: 2096418251964153410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2096418251964153414 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2956330803921158591, guid: da8f976b544aa994c8e61552e2139007, type: 3}
-  m_PrefabInstance: {fileID: 2096418251964153410}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4759583957827215699 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4782189292531779662, guid: da8f976b544aa994c8e61552e2139007, type: 3}
   m_PrefabInstance: {fileID: 2096418251964153410}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &4759583957827215700 stripped
