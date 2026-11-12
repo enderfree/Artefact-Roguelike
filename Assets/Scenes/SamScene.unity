@@ -329,8 +329,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.05257732, y: 0.00000003066412, z: -0.0000000016144702, w: 0.9986169}
-  m_LocalPosition: {x: 0, y: 1.5035291, z: -4.7685847}
+  m_LocalRotation: {x: 0.25340134, y: 0.000000032015418, z: -0.000000008386473, w: 0.9673613}
+  m_LocalPosition: {x: 0, y: 2.25, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -989,6 +989,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -45.000004
       objectReference: {fileID: 0}
+    - target: {fileID: 6106729083135536351, guid: 54cf9288c58d2ed4086a818ac942ade0, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106729083135536351, guid: 54cf9288c58d2ed4086a818ac942ade0, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106729083135536351, guid: 54cf9288c58d2ed4086a818ac942ade0, type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7019368613075642485, guid: 54cf9288c58d2ed4086a818ac942ade0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 15.000001
@@ -1000,6 +1012,10 @@ PrefabInstance:
     - target: {fileID: 7019368613075642485, guid: 54cf9288c58d2ed4086a818ac942ade0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.0000004419466
+      objectReference: {fileID: 0}
+    - target: {fileID: 7235954939161451267, guid: 54cf9288c58d2ed4086a818ac942ade0, type: 3}
+      propertyPath: _hp
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7235954939161451267, guid: 54cf9288c58d2ed4086a818ac942ade0, type: 3}
       propertyPath: _playerTransform
@@ -1124,7 +1140,7 @@ MonoBehaviour:
       Size: {x: 0.8, y: 0.8}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 1, z: 0}
+  TargetOffset: {x: 0, y: 0, z: 0}
   Damping: {x: 0.5, y: 0.5}
   Lookahead:
     Enabled: 0
@@ -1150,7 +1166,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  OrbitStyle: 0
+  OrbitStyle: 1
   Radius: 5
   Orbits:
     Top:
@@ -1245,8 +1261,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773940339}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.052577313, y: 0.000000030664115, z: -0.0000000016144692, w: 0.99861693}
-  m_LocalPosition: {x: 0, y: 1.5035291, z: -4.7685847}
+  m_LocalRotation: {x: 0.25340134, y: 0.000000032015418, z: -0.000000008386474, w: 0.9673613}
+  m_LocalPosition: {x: 0, y: 2.25, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
