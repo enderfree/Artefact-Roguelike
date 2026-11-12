@@ -2,19 +2,25 @@ using UnityEngine;
 
 public class TwoPip : Enemy
 {
-    // Fields
-    [SerializeField] private Transform _playerTransform;
+    // Field
     [SerializeField] private Animator _animator;
     [SerializeField] private LineRenderer _lr;
     [SerializeField] private Vector3 _laserHeightAdjustment;
     [SerializeField] private float _laserMaxRange;
-    [SerializeField] private float _laserGrowthRate; 
+    [SerializeField] private float _laserGrowthRate;
+
+    private Transform _playerTransform;
 
     private bool _idle = true;
     private bool _laserOn = false;
     private float _laserSize = 0f;
 
     // Monobehaviour
+    private void Awake()
+    {
+        _playerTransform = GameObject.FindAnyObjectByType<Player>().transform;
+    }
+
     private void FixedUpdate()
     {
         Vector3 direction = _playerTransform.position - transform.position;

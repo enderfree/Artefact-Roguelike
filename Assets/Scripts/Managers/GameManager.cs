@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private WeaponRegisterer _weaponRegisterer;
     [SerializeField] private Player _playerStats;
     [SerializeField] private GUIManager _guiManager;
+    [SerializeField] private CombatManager _combatManager;
 
     private GameObject _activeRoom;
 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
 
         // static for playtest, gonna ranomize the rooms later
         ActiveRoom = _roomManager.RoomPrefabs[RoomNames.Hexagon];
+        _combatManager.SpawnPlaytestEnemies(ActiveRoom.GetComponent<Room>());
     }
 
     /// <summary>

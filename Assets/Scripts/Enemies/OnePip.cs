@@ -3,13 +3,19 @@ using UnityEngine;
 public class OnePip : Enemy
 {
     // Fields
-    [SerializeField] private Transform _playerTransform;
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private Animator _animator;
+
+    private Transform _playerTransform;
 
     private bool _idle = true;
 
     // Monobehavior
+    private void Awake()
+    {
+        _playerTransform = GameObject.FindAnyObjectByType<Player>().transform;
+    }
+
     private void FixedUpdate()
     {
         if (_idle)
