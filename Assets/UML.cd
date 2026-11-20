@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Blessing">
+    <Position X="1.25" Y="0.5" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAIAAAAAgAAAAAAAAAAAQAAAAAAAAABgAAAAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\Blessings\Blessing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlessingEffect">
+    <Position X="8.25" Y="1.5" Width="8.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAQAAACgAIQEAAiAAAYAACAAQAAAgAAKAAIAAiA=</HashCode>
+      <FileName>Assets\Scripts\CS Object\BlessingEffects\BlessingEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StatMod">
+    <Position X="1.25" Y="3.75" Width="6.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAIAAAAAACAAAACAAIAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CS Object\BlessingEffects\StatMod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BowMoveset">
+    <Position X="5.25" Y="13.25" Width="2.5" />
+    <InheritanceLine Type="Moveset" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="7.875" Y="12.988" />
+        <Point X="7.875" Y="13.096" />
+        <Point X="6.5" Y="13.096" />
+        <Point X="6.5" Y="13.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CS Object\Movesets\BowMoveset.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moveset">
+    <Position X="5.75" Y="9.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAoCAAAgAAACQACAAAAAQAAAAAAAAEIAAAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\CS Object\Movesets\Moveset.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SwordMoveset">
+    <Position X="8" Y="13.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CS Object\Movesets\SwordMoveset.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Weapon">
+    <Position X="10.75" Y="7.25" Width="7" />
+    <TypeIdentifier>
+      <HashCode>AgBAIEDAAAAAAAQACgAEAAQQAAAAAAAAAAAAEAQAABA=</HashCode>
+      <FileName>Assets\Scripts\CS Object\Weapons\Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy">
+    <Position X="24" Y="3.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIADAAAAAAAAgAACAkARAQAgAAAIABAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\Enemy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OnePip">
+    <Position X="26.25" Y="8.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAQAAAAAQAAIAAAAIAAAAAIICAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\OnePip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TwoPip">
+    <Position X="23" Y="8.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAQAA4AQAAAAAUAAIAAAAAAAAAACIAAAAAARAEE=</HashCode>
+      <FileName>Assets\Scripts\Enemies\TwoPip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CombatManager">
+    <Position X="42" Y="1.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Managers\CombatManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConfirmationMenuManager">
+    <Position X="50.5" Y="4.75" Width="6.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAgQAAgAAAAgAAAAEAI=</HashCode>
+      <FileName>Assets\Scripts\Managers\ConfirmationMenuManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FaceEditingButtonManager" BaseTypeListCollapsed="true">
+    <Position X="57.25" Y="4.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\Managers\FaceEditingButtonManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameManager">
+    <Position X="32" Y="0.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAIAEAgAQAAAECAAAAQBAAAACAAAAAEg=</HashCode>
+      <FileName>Assets\Scripts\Managers\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUIManager">
+    <Position X="45.75" Y="1.25" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AsAAAAKAEAAAIAAhAgEAIAAAAAAAAIALAAAmAAAAWAA=</HashCode>
+      <FileName>Assets\Scripts\Managers\GUIManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomManager">
+    <Position X="38" Y="2" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Managers\RoomManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponRegisterer">
+    <Position X="35" Y="2.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAIAAAAgCAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Managers\WeaponRegisterer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="YesNoMenuManager">
+    <Position X="50.5" Y="1.5" Width="7" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAhAAAAAAAAAAAAAAAAAEAAQAAgIAAAAAACIAAI=</HashCode>
+      <FileName>Assets\Scripts\Managers\YesNoMenuManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DressGirlAnimationEventHandler">
+    <Position X="34.5" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAACAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\DressGirlAnimationEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyCharacterController" BaseTypeListCollapsed="true">
+    <Position X="11" Y="12" Width="11.5" />
+    <TypeIdentifier>
+      <HashCode>AogEWAAAwDAIgQqQCAAwKCEQAgCIQAAoFgASARABiCA=</HashCode>
+      <FileName>Assets\Scripts\Player\MyCharacterController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Player" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="3.25" Width="3.5" />
+    <NestedTypes>
+      <Delegate Name="Player.HPChanged" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Player\Player.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Player.MaxHPChanged" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Player\Player.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AgACAACAigAEACggABAAmTJAQAgAQAoBBAACCAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Player.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Room">
+    <Position X="28.5" Y="1" Width="3" />
+    <TypeIdentifier>
+      <HashCode>BAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAQCAAABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Rooms\Room.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HideInGame">
+    <Position X="40.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Standalone Property\HideInGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MeleeHurtBox">
+    <Position X="37.25" Y="6.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAQAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Standalone Property\MeleeHurtBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IBlessable">
+    <Position X="21" Y="0.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAEAAAQAgAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Interfaces\IBlessable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="BlessingEffectNames">
+    <Position X="8" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enums\BlessingEffectNames.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BlessingNames">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enums\BlessingNames.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BlessingRarities">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAABAAAAAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\Enums\BlessingRarities.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EnemyNames">
+    <Position X="22.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAEAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enums\EnemyNames.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MovesetNames">
+    <Position X="5.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAQAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enums\MovesetNames.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PlayerStatNames">
+    <Position X="1" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAACAAAAAAAAAABAAAAAAIAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enums\PlayerStatNames.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RoomNames">
+    <Position X="26.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAGAAAACAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enums\RoomNames.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WeaponNames">
+    <Position X="8.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQIA=</HashCode>
+      <FileName>Assets\Scripts\Enums\WeaponNames.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
