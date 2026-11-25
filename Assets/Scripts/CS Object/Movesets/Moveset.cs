@@ -10,9 +10,12 @@ public class Moveset
     // Fields
     public static Dictionary<MovesetNames, Moveset> Movesets = new Dictionary<MovesetNames, Moveset>();
 
-    [SerializeField] private MovesetNames _name;
-    [SerializeField] private Animator _animator;
-    [SerializeField] private Type _type;
+    private MovesetNames _name;
+    private Animator _animator;
+    private Type _type;
+
+    // not in constructor
+    private AttackTypes _onGoingAttack;
 
     public Dictionary<string, Action> Combos = new Dictionary<string, Action>();
     public List<string> PotentiallyMatchingCombos;
@@ -24,6 +27,7 @@ public class Moveset
         _name = name;
         _animator = animator;
         _type = type;
+        _onGoingAttack = AttackTypes.None;
 
         Movesets.Add(name, this);
     }
@@ -60,6 +64,14 @@ public class Moveset
     }
 
     // Getters and Setters
+    public virtual MovesetNames Name
+    {
+        get
+        {
+            return _name;
+        }
+    }
+
     public virtual Animator MovesetAnimator
     {
         get
@@ -84,11 +96,15 @@ public class Moveset
         }
     }
 
-    public virtual MovesetNames Name
+    public virtual AttackTypes OnGoingAttack
     {
         get
         {
-            return _name;
+            return _onGoingAttack;
+        }
+        set
+        {
+            _onGoingAttack = value;
         }
     }
 }

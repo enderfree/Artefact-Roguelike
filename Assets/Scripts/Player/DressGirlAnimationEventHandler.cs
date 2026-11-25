@@ -12,5 +12,6 @@ public class DressGirlAnimationEventHandler : MonoBehaviour
     public void DectivateWeaponHitbox()
     {
         _player.WeaponInstance.transform.Find("Hitbox").gameObject.SetActive(false);
+        _player.Weapon.Moveset.OnGoingAttack = AttackTypes.None;
     }
 }

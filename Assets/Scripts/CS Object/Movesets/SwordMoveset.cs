@@ -9,11 +9,13 @@ public class SwordMoveset : Moveset
 
     public void LightAttack()
     {
+        OnGoingAttack = AttackTypes.Light;
         MovesetAnimator.SetTrigger("LightAttack1");
     }
 
     public void HeavyAttack()
     {
+        OnGoingAttack = AttackTypes.Heavy;
         MovesetAnimator.SetTrigger("HeavyAttack");
     }
 }
