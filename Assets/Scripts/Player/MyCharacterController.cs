@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using Unity.Cinemachine;
 using KinematicCharacterController;
 using System;
+using System.Diagnostics.Tracing;
 
 [RequireComponent(typeof(KinematicCharacterMotor))]
 public class MyCharacterController : MonoBehaviour, ICharacterController
@@ -45,6 +46,8 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
     private float _timeSinceGrounded = Mathf.Infinity;
 
     private KinematicCharacterMotor _kinematicMotor;
+
+    [NonSerialized] public bool AllowInput = true;
 
     // MonoBehavior
     private void Start()
@@ -119,6 +122,8 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
     }
     private void UpdateInputs()
     {
+        if (!AllowInput) return;
+
         Vector2 moveActionInput = MoveAction.action.ReadValue<Vector2>();
 
         _moveInput = new Vector3(moveActionInput.x, 0, moveActionInput.y);
