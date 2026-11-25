@@ -17,6 +17,7 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
     public Animator PlayerAnimator;
 
     public Player PlayerStats;
+    public GameManager GameManagerScript;
 
     public float MaxGroundSpeed = 10f;
     public float MaxAirSpeed = 5f;
@@ -33,6 +34,9 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
     public float RotationRate = 5f;
 
     public Vector3 Gravity = new Vector3(0, -10, 0);
+
+    public float LightAttackCommitLineancy;
+    public float HeavyAttackCommitLineancy;
 
     private Vector3 _moveInput;
     private Vector3 _lookInput;
@@ -258,7 +262,7 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
                     {
                         // I'm doing this here instead of in the input listener so it's not constantly assigned
                         PlayerAnimator.speed = PlayerStats.AttackSpeed;
-                        AllowInput = false;
+                        StartCoroutine(GameManagerScript.DoAfterSeconds(() => { AllowInput = false; _moveInput = Vector3.zero; }, LightAttackCommitLineancy));
                         moveset.LightAttack();
                     }
                 }
@@ -284,7 +288,7 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
                     {
                         // I'm doing this here instead of in the input listener so it's not constantly assigned
                         PlayerAnimator.speed = PlayerStats.AttackSpeed;
-                        AllowInput = false;
+                        StartCoroutine(GameManagerScript.DoAfterSeconds(() => { AllowInput = false; _moveInput = Vector3.zero; }, HeavyAttackCommitLineancy));
                         moveset.HeavyAttack();
                     }
                 }

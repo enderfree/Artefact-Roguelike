@@ -2120,6 +2120,18 @@ PrefabInstance:
       propertyPath: PlayerAnimator
       value: 
       objectReference: {fileID: 4759583957827215700}
+    - target: {fileID: 7586833664016760090, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+      propertyPath: GameManagerScript
+      value: 
+      objectReference: {fileID: 755023999}
+    - target: {fileID: 7586833664016760090, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+      propertyPath: HeavyAttackCommitLineancy
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586833664016760090, guid: da8f976b544aa994c8e61552e2139007, type: 3}
+      propertyPath: LightAttackCommitLineancy
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,7 +44,7 @@ public class GameManager : MonoBehaviour
     /// <returns>0, 1, 2, 3, 4 or 5</returns>
     public int Roll1d6()
     {
-        return Random.Range(0, 5); 
+        return UnityEngine.Random.Range(0, 5); 
     }
 
     /// <summary>
@@ -63,6 +65,19 @@ public class GameManager : MonoBehaviour
     {
         // animation
         return Roll1d6();
+    }
+
+    /// <summary>
+    /// Perform an action after a certain number of seconds
+    /// </summary>
+    /// <param name="action">the action to perform</param>
+    /// <param name="sec">how long to wait before performing the action</param>
+    /// <returns>waited seconds</returns>
+    public IEnumerator DoAfterSeconds(Action action, float sec)
+    {
+        yield return new WaitForSeconds(sec);
+
+        action();
     }
 
     // Getters and Setters
