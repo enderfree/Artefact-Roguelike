@@ -1,21 +1,32 @@
 using System.Collections;
 using UnityEngine;
+using Unity.Cinemachine;
 
 public class MeleeHurtBox : MonoBehaviour
 {
     // Fields
+    [SerializeField] float _onHitCameraShakeStrength;
+
     private Player _player;
+    private CinemachineImpulseSource _mainCameraImpulseSource;
 
     // Monobehavior
     private void Awake()
     {
         _player = GameObject.FindAnyObjectByType<Player>();
+
+        // the on hit impulse is directly linked to the cinemachine because
+        // I don't want to have to add it to all weapons, but if we want a different shake depending on the weapon, 
+        // we should totally make it a field in the weapon
+        // note that I still made the force variable
+        _mainCameraImpulseSource = GameObject.FindAnyObjectByType<CinemachineCamera>().gameObject.GetComponent<CinemachineImpulseSource>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
         {
+            _mainCameraImpulseSource.GenerateImpulse(_onHitCameraShakeStrength);
             StartCoroutine(FreezeTemporarily(enemy));
         }
     }

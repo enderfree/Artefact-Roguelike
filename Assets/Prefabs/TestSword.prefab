@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d702ad154376346bc641e98293171d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _onHitCameraShakeStrength: 1
 --- !u!1 &2494251328935102192
 GameObject:
   m_ObjectHideFlags: 0
