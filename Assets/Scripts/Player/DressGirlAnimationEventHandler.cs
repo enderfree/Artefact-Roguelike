@@ -3,6 +3,7 @@ using UnityEngine;
 public class DressGirlAnimationEventHandler : MonoBehaviour
 {
     [SerializeField] private Player _player;
+    [SerializeField] private MyCharacterController _characterController;
 
     public void ActivateWeaponHitbox()
     {
@@ -13,5 +14,6 @@ public class DressGirlAnimationEventHandler : MonoBehaviour
     {
         _player.WeaponInstance.transform.Find("Hitbox").gameObject.SetActive(false);
         _player.Weapon.Moveset.OnGoingAttack = AttackTypes.None;
+        _characterController.AllowInput = true;
     }
 }

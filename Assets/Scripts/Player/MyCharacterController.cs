@@ -258,6 +258,7 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
                     {
                         // I'm doing this here instead of in the input listener so it's not constantly assigned
                         PlayerAnimator.speed = PlayerStats.AttackSpeed;
+                        AllowInput = false;
                         moveset.LightAttack();
                     }
                 }
@@ -283,6 +284,7 @@ public class MyCharacterController : MonoBehaviour, ICharacterController
                     {
                         // I'm doing this here instead of in the input listener so it's not constantly assigned
                         PlayerAnimator.speed = PlayerStats.AttackSpeed;
+                        AllowInput = false;
                         moveset.HeavyAttack();
                     }
                 }

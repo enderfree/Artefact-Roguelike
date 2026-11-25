@@ -2092,7 +2092,7 @@ MonoBehaviour:
   AttackAction: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   HeavyAttackAction: {fileID: -1482353967722823017, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   PlayerCamera: {fileID: 0}
-  PlayerAnimator: {fileID: 0}
+  PlayerAnimator: {fileID: 6895217519585327762}
   PlayerStats: {fileID: 2160496949435205455}
   MaxGroundSpeed: 10
   MaxAirSpeed: 5
@@ -2146,12 +2146,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   _gameManager: {fileID: 0}
   _weaponHolder: {fileID: 162523669865199613}
-  _characterController: {fileID: 0}
+  _characterController: {fileID: 7586833664016760090}
   _characterName: Angel
   _maxHP: 100
   _hp: 100
-  _attackSpeed: 0
-  _movementSpeed: 0
+  _attackSpeed: 1
+  _movementSpeed: 1
 --- !u!1 &7014976554259664440
 GameObject:
   m_ObjectHideFlags: 0
@@ -2669,6 +2669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _player: {fileID: 2160496949435205455}
+  _characterController: {fileID: 7586833664016760090}
 --- !u!1 &8899988258463397738
 GameObject:
   m_ObjectHideFlags: 0
