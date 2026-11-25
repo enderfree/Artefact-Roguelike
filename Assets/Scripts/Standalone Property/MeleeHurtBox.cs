@@ -6,6 +6,7 @@ public class MeleeHurtBox : MonoBehaviour
 {
     // Fields
     [SerializeField] float _onHitCameraShakeStrength;
+    [SerializeField] float _heavyAttackDamageMtpl;
 
     private Player _player;
     private CinemachineImpulseSource _mainCameraImpulseSource;
@@ -62,6 +63,20 @@ public class MeleeHurtBox : MonoBehaviour
             enemyAnimator.speed = enemyAnimatorSpeed;
         }
 
-        enemy.HP -= _player.Damage;
+        ApplyDamage(enemy);
+    }
+
+    private void ApplyDamage(Enemy enemy)
+    {
+        float damage = _player.Damage;
+
+        // made a switch case in case we want more things that deal extra damage later
+        switch (_player.Weapon.Moveset.OnGoingAttack)
+        {
+            case AttackTypes.Heavy: damage *= _heavyAttackDamageMtpl; break;
+            default: break;
+        }
+
+        enemy.HP -= damage;
     }
 }

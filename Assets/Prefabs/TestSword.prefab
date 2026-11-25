@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _onHitCameraShakeStrength: 1
+  _heavyAttackDamageMtpl: 4
 --- !u!96 &1389824779681463727
 TrailRenderer:
   serializedVersion: 4
