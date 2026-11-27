@@ -25,6 +25,8 @@ public class MeleeHurtBox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Debug.Log(other.gameObject.name);
+
         if (other.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
         {
             _mainCameraImpulseSource.GenerateImpulse(_onHitCameraShakeStrength);
