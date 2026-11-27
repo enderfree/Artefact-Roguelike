@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6709958428132081392}
   - component: {fileID: 7511535560030605008}
   - component: {fileID: 7826185566293415379}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor3
   m_TagString: Walls
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 2868468952329508071}
   - component: {fileID: 8169104654510288161}
   - component: {fileID: 1749130629598750601}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (1)
   m_TagString: Walls
   m_Icon: {fileID: 0}
@@ -3204,7 +3204,7 @@ GameObject:
   - component: {fileID: 5674531658798442393}
   - component: {fileID: 5390456565336187941}
   - component: {fileID: 244393062630646440}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2
   m_TagString: Walls
   m_Icon: {fileID: 0}
@@ -3561,7 +3561,7 @@ GameObject:
   - component: {fileID: 6541172109488819032}
   - component: {fileID: 5901143277702407322}
   - component: {fileID: 5278945093677402668}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall3
   m_TagString: Walls
   m_Icon: {fileID: 0}
@@ -3918,7 +3918,7 @@ GameObject:
   - component: {fileID: 3109089779933695259}
   - component: {fileID: 7777283165807621103}
   - component: {fileID: 6453935856403293259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs
   m_TagString: Walls
   m_Icon: {fileID: 0}
@@ -6689,7 +6689,7 @@ GameObject:
   - component: {fileID: 9063306027040141516}
   - component: {fileID: 7924209805080501649}
   - component: {fileID: 1935382208760265818}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door1
   m_TagString: Walls
   m_Icon: {fileID: 0}
@@ -7267,7 +7267,7 @@ GameObject:
   - component: {fileID: 249995302970436460}
   - component: {fileID: 6016679081980386038}
   - component: {fileID: 1335302578481492329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Walls
   m_Icon: {fileID: 0}
@@ -7725,7 +7725,7 @@ GameObject:
   - component: {fileID: 1799486894509175602}
   - component: {fileID: 7478738974711577409}
   - component: {fileID: 7195254311122844614}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor1
   m_TagString: Walls
   m_Icon: {fileID: 0}
@@ -8113,7 +8113,7 @@ GameObject:
   - component: {fileID: 487529288320043401}
   - component: {fileID: 4726898409642002607}
   - component: {fileID: 1340600467575627998}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door
   m_TagString: Walls
   m_Icon: {fileID: 0}
@@ -8784,7 +8784,7 @@ GameObject:
   - component: {fileID: 896414999222579945}
   - component: {fileID: 6747049720017713366}
   - component: {fileID: 1896317992815575987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall1
   m_TagString: Walls
   m_Icon: {fileID: 0}
